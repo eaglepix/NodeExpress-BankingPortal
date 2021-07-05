@@ -12,13 +12,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use('/account', accountRoutes);
-app.use('/services ', servicesRoutes);
-
-// const accountData = fs.readFileSync(path.join(__dirname, 'json', 'accounts.json'), 'UTF8');
-// const accounts = JSON.parse(accountData);
-
-// const userData = fs.readFileSync(path.join(__dirname, 'json', 'users.json'), 'UTF8');
-// const users = JSON.parse(userData);
+app.use('/services', servicesRoutes);
 
 app.get('/', (req, res) => {
     res.render('index',
