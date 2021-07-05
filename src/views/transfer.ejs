@@ -10,13 +10,13 @@
   <form id="transferForm">
     <span>Transfer From: </span> 
     <select required>
-      <option value="checking">Checking</option>
-      <option value="savings">Savings</option>
+      <option name="from-checking" id="from-checking" value="checking">Checking</option>
+      <option name="from-savings" id="from-savings" value="savings">Savings</option>
     </select>
     <span> to: </span>
     <select required>
-      <option value="checking">Checking</option>
-      <option value="savings">Savings</option>
+      <option name="to-checking" id="to-checking" value="checking">Checking</option>
+      <option name="to-savings" id="to-savings" value="savings">Savings</option>
     </select>
     <input type="number" name="amount" id="amount" required placeholder="amount" step="0.01">
     <button type="submit">Transfer</button>
