@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const express = require('express');
-const { accounts, users, writeJSON } = require('./data')
+const { accounts, users, writeJSON } = require('./data');
 const app = express();
 
 app.set("views", path.join(__dirname, "views"));
@@ -63,7 +63,7 @@ app.post('/transfer', (req, res) => {
     accounts[req.body.to].balance += parseInt(req.body.amount, 10);
     // const accountsJSON = JSON.stringify(accounts, null, 4);
     // fs.writeFileSync(path.join(__dirname, 'json', 'accounts.json'), accountsJSON, 'UTF8');
-    writeJSON(accounts);
+    writeJSON();
     res.render('transfer',
         {
             message: "Transfer Completed"
@@ -82,7 +82,7 @@ app.post('/payment', (req, res) => {
     accounts.credit.available += parseInt(req.body.amount, 10);
     // const accountsJSON = JSON.stringify(accounts, null, 4);
     // fs.writeFileSync(path.join(__dirname, 'json', 'accounts.json'), accountsJSON, 'UTF8');
-    writeJSON(accounts);
+    writeJSON();
     res.render('payment',
         {
             message: "Payment Successful",
