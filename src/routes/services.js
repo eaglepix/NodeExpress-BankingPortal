@@ -6,7 +6,6 @@ const router = express.Router();
 router.get('/transfer', (req, res) => {
     res.render('transfer',
         {
-
         });
 });
 
